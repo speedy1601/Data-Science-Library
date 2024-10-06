@@ -5,9 +5,9 @@
 | 3  | `apply(func, include_groups=False)`         | `map_groups(function, schema=None)`             |
 | 4  | `assign(conditions_separated_by_comma)`     | `with_columns(expressions_separated_by_comma)`  |
 | 5  | `merge(right, on, left_on, right_on, how)`  | `join(other, on, left_on, right_on, how)`       |
-| 6  |  `nlargest(n)`                              |  `top_k(k)`                                     |
-| 7  |  `nsmallest(n)`                             |  `bottom_k(k)`                                  |
-|   |  |  |
+| 6  | `nlargest(n)`                               |  `top_k(k)`                                     |
+| 7  | `nsmallest(n)`                              |  `bottom_k(k)`                                  |
+| 8  |  `query("conditions")`                      |  `filter(expressions)`                          |
 |   |  |  |
 |   |  |  |
 |   |  |  |

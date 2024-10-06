@@ -1,18 +1,15 @@
 {
     "sqltools.connections": [
         {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
             "previewLimit": 50,
             "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "sabdwitch",
-            "database": "prac",
-            "username": "alien",
-            "password": "Tasmine0@m"
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "PG Local",
+            "database": "leetcode_practice",
+            "username": "postgres",
+            "password": "Tumariaschillerefy1601@po",
+            "connectionTimeout": 30
         }
     ]
 }
