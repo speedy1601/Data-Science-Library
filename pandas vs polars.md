@@ -17,3 +17,4 @@
 | 15 |  `diff()`                                      |  `diff()`                                      |
 | 16 | `to_datetime(column_name, errors='coerce')`    |  `.str.to_datetime(format)`                    |
 | 17 | `date_range(start, end, freq)`                 |  `date_range/datetime_range (start, end, interval)`|
+| 18 |                                                |  `with_row_index(name, offset)`                    |
