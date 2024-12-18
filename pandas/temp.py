@@ -3,7 +3,7 @@ import keyboard
 # This variable will store the currently typed sentence
 current_sentence = ""
 
-def on_key_event(event):
+def on_key_event(event:keyboard.KeyboardEvent):
     global current_sentence
 
     # When any key is pressed (including characters, special keys, etc.)
