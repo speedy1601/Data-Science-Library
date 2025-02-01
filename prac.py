@@ -4,14 +4,14 @@ import pytesseract
 
 from collections import deque
 
-# myconfig = r"--psm 6 --oem 3"
+myconfig = r"--psm 6 --oem 3"
 
-# text = pytesseract.image_to_string(cv2.imread("images/random1.jpg"), config=myconfig)
+text = pytesseract.image_to_string(cv2.imread("images/random1.jpg"), config=myconfig)
 
-# with open("extracted_text.txt", "r") as text_file:
-#     text_file.write(text)
+with open("extracted_text.txt", "r") as text_file:
+    text_file.write(text)
 
-# print(text)
+print(text)
 
 def doit() -> None:
     img = cv2.imread("Black and White Image.jpg")
@@ -45,12 +45,12 @@ def doit1() -> None:
     with open("extracted_text1.txt", "w") as text_file:
         text_file.write(text)
 
-# a = 1
-# doit() if a == 0 else doit1()
+a = 1
+doit() if a == 0 else doit1()
 
 
 
-# with open("Extracted By Me.txt", "r") as text_file:
-#     contents = text_file.read()
-#     for line in contents.splitlines():
-#         print(line)
+with open("Extracted By Me.txt", "r") as text_file:
+    contents = text_file.read()
+    for line in contents.splitlines():
+        print(line)
