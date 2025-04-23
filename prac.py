@@ -60,14 +60,14 @@ import numpy as np
 
 x = y = np.linspace(-10, 10, 100)  # x1, y1 are not pointing to the same Array.
 xx, yy = np.meshgrid(x, y)
-zz = np.arange(x.shape[0]**2).reshape((100, 100)) # Bottom-Left Corner (-10, -10) => 100 + 100 = 200(the highest point of Z axis)
+zz = xx**2 + yy**2 # Bottom-Left Corner (-10, -10) => 100 + 100 = 200(the highest point of Z axis)
 
 fig = plt.figure(figsize=(10, 10))
 
-ax3 = fig.add_subplot(projection='3d')
+ax3 = fig.add_subplot(1, 1, 1, projection='3d')
 p = ax3.plot_surface(xx, yy, zz, cmap='ocean')
-# fig.colorbar(mappable=p, ax=ax3)
-ax3.set_title("3D view of np.arange(x.shape[0])")
+fig.colorbar(mappable=p, ax=ax3, location='left')
+ax3.set_title("3D view of x**2 + y**2")
 ax3.set_xlabel("x", labelpad=10, c='red')
 ax3.set_ylabel("y", labelpad=10, c='blue')
 ax3.set_zlabel("z", labelpad=10, c='green')
