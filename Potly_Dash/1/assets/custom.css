@@ -1,0 +1,151 @@
+#dashApp {
+    display: flex;
+    flex-direction: column;  /* makes Flexbox stack children vertically.   */
+    justify-content: center; /* center children vertically.                */
+    align-items: center;     /* center children horizontally.              */
+
+    position: relative;
+    margin: -5px;            /* distance between dashApp and its outside.  */
+    line-height: 10px;       /* space between any 2 children.              */
+}
+
+#firstH1 { /* content doesn't work without ::after or ::before. So write it inside python's children attribute. */
+    text-align: center;
+    color: #000000;
+}
+
+#button1 {
+    width: 100px;
+    height: 30px;
+    border: 2px solid rgb(17, 153, 47);
+    color: green;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+#button1:active {
+    background-color: rgba(64, 255, 47, 0.616);
+}
+
+#table_containing_div {
+    position: relative; /* overflow: hidden doesn't work without position is relative. */
+}
+
+#table1 {
+    height: 500px;
+    width: 700px;
+    background: #000000;
+    overflow: scroll;
+    box-shadow: 0 0 15px rgba(37, 37, 37, 0.9);
+    position: relative;
+
+}
+
+#table1::-webkit-scrollbar { /*The side area outside the table except the thumb and button areas. */
+    background: #1D1F22DC;
+    width: 10px;
+    height: 9px;
+}
+#table1::-webkit-scrollbar-thumb { /* The wheel button holding what we move. */
+    background: linear-gradient(#0230ff, #00e1ff);
+    border-radius: 10px;
+    border: 2px solid #757575;
+}
+#table1::-webkit-scrollbar-corner { /* The Right Bottom little square corner. */
+    background: transparent;
+}
+
+#table1 .dash-header { /* table1 and  .dash-header must have space between them. */
+    background: #000000;   /* rgba(2; 158; 247; 0.5) */
+    color: #dadfe6;
+    font-family: "Segoe UI";
+    font-weight: "semi-bold";
+    font-size : 18px;
+    text-align: center;
+    border: 2px solid white !important; /* Use "!important" if you want to override Dash's default border style.*/
+    text-shadow: 0 0 1px white !important;
+
+    position : sticky;
+    top: -1px; /* style_header is child and the parent is the DataTable. */
+}
+
+#table1 .dash-cell {
+    background: #1D1F22DC;
+    color: #b9c3d1;
+    font-family: "Segoe UI";
+    font-size: 16px;
+
+    text-align: center; /* It centers horizontally, not vertically. */
+    /* line-height: 0px;  Distance between the text and the cell. */
+}
+
+#table1 .dash-cell:focus,
+#table1 .dash-cell:hover,
+#table1 .dash-cell:active {
+    background: #00c3ffd8 !important;     /* #00c3ffa2 */
+    border: 2px solid #2bb1ff !important; /* #2bceff */
+    color: #000000 !important;
+
+    outline: none !important;
+    box-shadow: none !important;
+}
+#table1 .dash-cell:focus-within {
+    background: black !important;
+    border: 3px solid #2bc3ff !important;
+    color: #ffffff !important;
+}
+
+/*
+#table1 tr:hover { -- If you want to apply it for all table write ".dash-spreadsheet" instead of "table1" and write td.dash-cell if
+    background-color: black !important; -- you want actual deep color of this background-color. Write black instead of that
+} -- color if you want NO HOVER ROW EFFECT.
+*/
+#table1 tr:hover {
+    background: black !important;
+    border: 0px solid #2bb1ffbd !important;
+}
+
+#float_containing_div {
+    height: 470px; /* From bottom = 0 to till the dash-header. */
+    width: 710px;
+    position: absolute; /* Its parent is table_containing_div which is the last element of dashApp. */
+    bottom: 0;
+    overflow: hidden;
+}
+
+#floating_div {
+    width: 701px;
+    height: 250px;
+    border: none;
+    transition: transform 0.4s linear;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    
+    transform: translateY(100%);
+    position: absolute;
+    bottom: 0;
+    /* overflow: hidden; */
+
+    --te: 25px;
+    --tf: calc(var(--te) + 2.8px);
+
+    content: '';
+    background: 
+        repeating-linear-gradient(to right,
+            transparent 0 var(--te),
+            rgba(9, 20, 22, 0.7) var(--te) var(--tf)),
+        
+        repeating-linear-gradient(to bottom,
+            transparent 0 var(--te),
+            rgba(9, 20, 22, 0.7) var(--te) var(--tf)),
+
+        /* linear-gradient(to bottom, rgba(0, 195, 255, 0.966) 60%, rgba(0, 68, 255, 0.601) 40%); */
+        rgba(0, 162, 255, 0.7); /* (0, 68, 255, 0.601) */
+    
+    /* box-shadow: 0 5px 10px rgba(0, 217, 255, 0.9) inset; 6, 106, 238, 0.856 */
+    visibility: hidden;
+}
+
+#floating_div.clicked {
+    transform: translateY(-200%);
+}
